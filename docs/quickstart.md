@@ -9,7 +9,7 @@ This guide will help you get Modern MEAN running
 5. Gulp 4
 
 ##Node Support
-You can find the most up to date information on what node versions we support by looking at our <a href="https://github.com/trainerbill/modern-mean-core/blob/master/.travis.yml#L3">travis builds.</a>
+You can find the most up to date information on what node versions we support by looking at our <a href="https://github.com/trainerbill/modern-mean/blob/master/.travis.yml#L3">travis builds.</a>
 
 ##Gulp 4 CLI installation
 ```sh
@@ -27,7 +27,7 @@ npm install bower -g
 ##Modern MEAN installation
 ```sh
 #NodeJS v5.8 is REQUIRED
-git clone https://github.com/modern-mean/modern-mean-core.git
+git clone https://github.com/modern-mean/modern-mean.git
 cd modern-mean-core
 npm install
 ```
@@ -37,10 +37,10 @@ When running the application for the first time you should seed the users by set
 ```bash
 MONGO_SEED=true gulp
 ```
-For more information on database seeding visit the <a href="https://github.com/modern-mean/modern-mean-core/blob/master/docs/dbseeding.md">database seeding documentation</a>
+For more information on database seeding visit the <a href="https://github.com/modern-mean/modern-mean/blob/master/docs/dbseeding.md">database seeding documentation</a>
 
 ##Modern MEAN Runtime
 ```sh
 gulp
 ```
-For more information on gulp tasks visit the <a href="https://github.com/modern-mean/modern-mean-core/blob/master/docs/gulptasks.md">gulp tasks documentation</a>
+For more information on gulp tasks visit the <a href="https://github.com/modern-mean/modern-mean/blob/master/docs/gulptasks.md">gulp tasks documentation</a>

@@ -20,11 +20,11 @@ app/tests/coverage/
 # Modern-MEAN app and assets
 # ======================
 public/dist/
-uploads
-modules/users/client/img/profile/uploads
-config/env/local.js
-config/env/local-*.js
-config/sslcerts/
+public/img/
+modules/modern-mean-*
+
+
+
 
 # Ignoring Modern-MEAN's gh-pages branch for documenation
 _site/
@@ -40,8 +40,6 @@ _site/
 *.tmp
 *.bak
 *.swp
-
-build/
 
 # Sublime editor
 # ==============

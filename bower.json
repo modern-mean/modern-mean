@@ -1,0 +1,23 @@
+{
+  "name": "mean",
+  "description": "Full-Stack JavaScript with MongoDB, Express, AngularJS, and Node.js",
+  "homepage": "https://github.com/modern-mean/",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "~1.5",
+    "angular-animate": "~1.5",
+    "angular-aria": "~1.5",
+    "angular-resource": "~1.5",
+    "angular-sanitize": "~1.5",
+    "angular-material": "1.0.7-master-0c659c2",
+    "angular-ui-router": "^0.2.18",
+    "angular-material-icons": "^0.6.0",
+    "ng-lodash": "^0.4.0",
+    "angular-messages": "^1.5.0",
+    "angular-google-analytics": "~1.1.6"
+  },
+  "overrides": {},
+  "devDependencies": {
+    "angular-mocks": "~1.5"
+  }
+}

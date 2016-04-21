@@ -1,0 +1,17 @@
+{
+  "env": {
+    "production": {
+      "presets": ["es2015-node5"]
+    },
+    "test": {
+      "presets": ["es2015-node5"]
+    },
+    "development": {
+      "presets": ["es2015-node5"]
+    },
+    "travis": {
+      "presets": ["es2015-node5"],
+      "plugins": ["transform-remove-console"]
+    }
+  }
+}

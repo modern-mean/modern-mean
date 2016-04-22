@@ -69,37 +69,27 @@ modules.displayName = 'images';
 gulp.task(images);
 
 function inject() {
-  return gulp.src('./modules/modern-mean-core-material/dist/server/views/index.server.view.html')
+  return gulp.src('modules/modern-mean-core-material/dist/server/views/index.server.view.html')
     .pipe(ginject(gulp.src(['public/dist/angular.js', 'public/dist/bootloader.js', 'public/dist/**/*.{js,css}'], {read: false}), {
       ignorePath: '/public'
     }))
-    .pipe(gulp.dest('./modules/modern-mean-core-material/dist/server/views/'));
+    .pipe(gulp.dest('modules/modern-mean-core-material/dist/server/views/'));
 }
 inject.displayName = 'inject';
 gulp.task(inject);
 
 function clean() {
   return del([
-    './public/dist',
-    './.coverdata'
+    './public/dist'
   ]);
 }
 inject.displayName = 'clean';
 gulp.task(clean);
-
-function config() {
-  return gulp.src(['./config/**/*.js'])
-    .pipe(babel())
-    .pipe(gulp.dest('./node_modules/modernMean'));
-}
-inject.displayName = 'config';
-gulp.task(config);
 
 
 export {
   modules,
   images,
   clean,
-  config,
   inject
 };

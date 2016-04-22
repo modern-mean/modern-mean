@@ -12,7 +12,6 @@ function setDevelopment(done) {
 
 function setTest(done) {
   process.env.NODE_ENV = 'test';
-  process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
   return done();
 }
 
@@ -29,6 +28,6 @@ link.displayName = 'link';
 gulp.task(link);
 
 //Gulp Default
-var defaultTask = gulp.series(build.clean, setDevelopment, gulp.parallel(build.config, build.modules, build.images), build.inject, serve.start, serve.watch.all);
+var defaultTask = gulp.series(build.clean, setDevelopment, gulp.parallel(build.modules, build.images), build.inject, serve.start, serve.watch.all);
 defaultTask.displayName = 'default';
 gulp.task(defaultTask);

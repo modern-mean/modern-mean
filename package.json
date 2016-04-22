@@ -17,7 +17,7 @@
   "scripts": {
     "start": "gulp",
     "test": "gulp test",
-    "postinstall": "bower install --config.interactive=false"
+    "postinstall": "bower install --config.interactive=false && gulp link"
   },
   "dependencies": {
     "babel-core": "~6.7.4",

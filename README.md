@@ -5,6 +5,12 @@
 [![dependencies](https://david-dm.org/modern-mean/modern-mean-core.svg)](https://david-dm.org/modern-mean/modern-mean-core)
 [![Coverage Status](https://coveralls.io/repos/github/modern-mean/modern-mean-core/badge.svg?branch=master)](https://coveralls.io/github/modern-mean/modern-mean-core?branch=master)
 
+##Quick Started
+This package is only the filesystem and build system.  You need to install a core package
+```sh
+npm install --save modern-mean/modern-mean-core-material
+gulp link
+```
 
 ## Documentation
 Visit our <a href="https://github.com/modern-mean/modern-mean/tree/master/docs">documentation folder</a> for up to date documentation

@@ -7,12 +7,10 @@ import forever from 'forever';
 import livereload from 'gulp-livereload';
 import lodash from 'lodash';
 import * as build from './build';
-import { mergeEnvironment } from '../../config/config.js';
 
 var nodemonInstance;
 
 function start(done) {
-
   nodemonInstance = nodemon({
     script: './modules/modern-mean-core-material/dist/server/app/server.js',
     watch: ['noop'],
@@ -30,7 +28,6 @@ function restart(done) {
 restart.displayName = 'Nodemon Restart Server';
 
 function watchClient(done) {
-  let config = mergeEnvironment();
   let watchFiles = ['./modules/*/dist/client/**/*.*'];
   livereload.listen();
   gulp.watch(watchFiles, gulp.series(terminalClear, build.modules, build.inject, restart, livereloadChanged));
@@ -39,7 +36,6 @@ function watchClient(done) {
 watchClient.displayName = 'Serve::Watch::Client';
 
 function watchServer(done) {
-  let config = mergeEnvironment();
   let watchFiles = ['./modules/*/dist/server/**/*.*'];
   gulp.watch(watchFiles, gulp.series(terminalClear, build.modules, build.inject, restart, livereloadChanged));
   return done();
@@ -60,7 +56,7 @@ function terminalClear(done) {
     return done();
   }
 }
-
+/*
 function startForever(done) {
   let config = mergeEnvironment();
 
@@ -72,6 +68,7 @@ function startForever(done) {
 
 
 }
+*/
 
 let watch = {
   all: gulp.parallel(watchClient, watchServer),
@@ -83,6 +80,6 @@ export {
   start,
   restart,
   watch,
-  terminalClear as clear,
-  startForever as forever
+  terminalClear as clear
+  //startForever as forever
 };

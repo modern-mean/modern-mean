@@ -8,7 +8,9 @@
 ##Quick Started
 This package is only the filesystem and build system.  You need to install a core package
 ```sh
-npm install --save modern-mean/modern-mean-core-material
+git clone https://github.com/modern-mean/modern-mean.git
+npm install
+npm install modern-mean/modern-mean-core-material
 gulp link
 ```
 

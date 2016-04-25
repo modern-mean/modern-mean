@@ -28,7 +28,7 @@ npm install bower -g
 ```sh
 #NodeJS v5.8 is REQUIRED
 git clone https://github.com/modern-mean/modern-mean.git
-cd modern-mean-core
+cd modern-mean
 npm install
 ```
 

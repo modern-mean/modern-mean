@@ -23,7 +23,6 @@ function modules() {
   let templates = filter(['**/templates.js'], { restore: true });
 
   return gulp.src(['./modules/*/dist/client/**/*.{js,css}'])
-          .pipe(debug())
           .pipe(angular)
           .pipe(rename('angular.js'))
           .pipe(angular.restore)

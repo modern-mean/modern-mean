@@ -23,6 +23,7 @@ function modules() {
   let templates = filter(['**/templates.js'], { restore: true });
 
   return gulp.src(['./modules/*/dist/client/**/*.{js,css}'])
+          .pipe(debug())
           .pipe(angular)
           .pipe(rename('angular.js'))
           .pipe(angular.restore)
@@ -51,7 +52,6 @@ gulp.task(modules);
 
 function images() {
   return gulp.src(['./modules/*/dist/client/img/**/*'])
-          .pipe(debug())
           .pipe(rename(function (path) {
             let dir = path.dirname.split('/');
             path.dirname = dir[0];

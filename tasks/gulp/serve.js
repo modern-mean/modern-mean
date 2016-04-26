@@ -3,12 +3,15 @@
 import gulp from 'gulp';
 import chalk from 'chalk';
 import nodemon from 'gulp-nodemon';
+import debug from 'gulp-debug';
 import forever from 'forever';
 import livereload from 'gulp-livereload';
 import lodash from 'lodash';
 import * as build from './build';
+import path from 'path';
+import { exec } from 'child_process';
 
-var nodemonInstance;
+let nodemonInstance;
 
 function start(done) {
   nodemonInstance = nodemon({
@@ -25,27 +28,49 @@ function restart(done) {
     return done();
   });
 }
-restart.displayName = 'Nodemon Restart Server';
+restart.displayName = 'nodemon:restart';
 
 function watchClient(done) {
-  let watchFiles = ['./modules/*/dist/client/**/*.*'];
+  let watchFiles = ['./modules/*/client/**/*'];
   livereload.listen();
-  gulp.watch(watchFiles, gulp.series(terminalClear, build.modules, build.inject, restart, livereloadChanged));
+  let watcher = gulp.watch(watchFiles);
+  watcher.on('change', function(filepath, stats) {
+    let pathArr = filepath.split('/');
+    let modulePath = pathArr[0] + '/' + pathArr[1];
+    let gulpFile = './' + modulePath + '/gulpfile.babel.js';
+    console.log(gulpFile);
+    exec('gulp --gulpfile ' + gulpFile + ' client', function(error, stdout, stderr) {
+      console.log(stdout);
+      gulp.series(gulp.parallel(build.modules, build.images), build.inject, restart, livereloadChanged)();
+    });
+  });
+
   return done();
 }
 watchClient.displayName = 'Serve::Watch::Client';
 
 function watchServer(done) {
-  let watchFiles = ['./modules/*/dist/server/**/*.*'];
-  gulp.watch(watchFiles, gulp.series(terminalClear, build.modules, build.inject, restart, livereloadChanged));
+  let watchFiles = ['./modules/*/server/**/*'];
+  let watcher = gulp.watch(watchFiles);
+  watcher.on('change', function(filepath, stats) {
+    let pathArr = filepath.split('/');
+    let modulePath = pathArr[0] + '/' + pathArr[1];
+    let gulpFile = './' + modulePath + '/gulpfile.babel.js';
+    exec('gulp --gulpfile ' + gulpFile + ' server', function(error, stdout, stderr) {
+      gulp.series(build.inject, restart(done))();
+    });
+  });
+
   return done();
+
 }
 watchServer.displayName = 'Serve::Watch::Server';
 
 function livereloadChanged(done) {
   setTimeout(function () {
+    console.log('RESTARTING CLIENT');
     livereload.changed('Restart Client');
-  }, 1000);
+  }, 2000);
   return done();
 }
 livereloadChanged.displayName = 'Serve::LiveReload::Changed';

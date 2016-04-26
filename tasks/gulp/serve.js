@@ -57,7 +57,8 @@ function watchServer(done) {
     let modulePath = pathArr[0] + '/' + pathArr[1];
     let gulpFile = './' + modulePath + '/gulpfile.babel.js';
     exec('gulp --gulpfile ' + gulpFile + ' server', function(error, stdout, stderr) {
-      gulp.series(build.inject, restart(done))();
+      console.log(stdout);
+      gulp.series(build.inject, restart)();
     });
   });
 
@@ -68,7 +69,6 @@ watchServer.displayName = 'Serve::Watch::Server';
 
 function livereloadChanged(done) {
   setTimeout(function () {
-    console.log('RESTARTING CLIENT');
     livereload.changed('Restart Client');
   }, 2000);
   return done();

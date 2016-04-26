@@ -9,8 +9,9 @@ This package is only the filesystem and build system.  You need to install a cor
 git clone https://github.com/modern-mean/modern-mean.git
 cd modern-mean
 npm install
-npm install modern-mean/modern-mean-core-material
+npm install modern-mean/core-material
 gulp link
+gulp
 ```
 
 ## Documentation

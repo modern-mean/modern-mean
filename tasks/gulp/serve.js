@@ -14,6 +14,7 @@ function start(done) {
   nodemonInstance = nodemon({
     script: './modules/modern-mean-core-material/dist/server/app/server.js',
     watch: ['noop'],
+    nodeArgs: ['--debug']
   });
   return done();
 }

@@ -32,15 +32,15 @@ cd modern-mean
 npm install
 ```
 
-###First Run
-When running the application for the first time you should seed the users by setting the MONGO_SEED environment variable.
-```bash
-MONGO_SEED=true gulp
+##Core Installation
+```sh
+#NodeJS v5.8 is REQUIRED
+npm install https://github.com/modern-mean/core-material.git
+gulp link
 ```
-For more information on database seeding visit the <a href="https://github.com/modern-mean/modern-mean/blob/master/docs/dbseeding.md">database seeding documentation</a>
 
 ##Modern MEAN Runtime
 ```sh
 gulp
 ```
-For more information on gulp tasks visit the <a href="https://github.com/modern-mean/modern-mean/blob/master/docs/gulptasks.md">gulp tasks documentation</a>
+Or any other gulp run task.  For more information on gulp tasks visit the <a href="https://github.com/modern-mean/modern-mean/blob/master/docs/gulptasks.md">gulp tasks documentation</a>

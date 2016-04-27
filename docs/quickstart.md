@@ -34,7 +34,7 @@ npm uninstall gulp-cli -g
 # install Gulp 4 CLI tools globally from 4.0 GitHub branch
 npm install gulpjs/gulp-cli#4.0 -g
 ```
-This will install Gulp 4 CLI globally so any other node projects using gulp 3.9 will not work.  <a href="https://github.com/modern-mean/modern-mean/blob/master/docs/gulp4install.md>Take a look at our gulp 4 documentation to switch back to gulp 3.9.</a>
+This will install Gulp 4 CLI globally so any other node projects using gulp 3.9 will not work.  <a href="gulp4install.md>Take a look at our gulp 4 documentation to switch back to gulp 3.9.</a>
 
 ##Modern MEAN installation
 You need to clone the main modern-mean package.  This is only a build process and file structure.
@@ -66,4 +66,7 @@ gulp link
 ```sh
 gulp
 ```
-Or any other gulp run task.  For more information on gulp tasks visit the <a href="https://github.com/modern-mean/modern-mean/blob/master/docs/gulptasks.md">gulp tasks documentation</a>
+Or any other gulp run task.  For more information on gulp tasks visit the <a href="gulptasks.md">gulp tasks documentation</a>
+
+##Next
+<a href="installedmodules.md">Updating and configuring installed modules</a>

@@ -69,4 +69,4 @@ gulp
 Or any other gulp run task.  For more information on gulp tasks visit the <a href="gulptasks.md">gulp tasks documentation</a>
 
 ##Next
-<a href="installedmodules.md">Updating and configuring installed modules</a>
+<a href="configure_modules.md">Configuring installed modules</a>

@@ -10,7 +10,6 @@ git clone https://github.com/modern-mean/modern-mean.git
 cd modern-mean
 npm install
 npm install modern-mean/core-material
-gulp link
 gulp
 ```
 

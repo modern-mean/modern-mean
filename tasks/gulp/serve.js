@@ -15,7 +15,8 @@ let nodemonInstance;
 
 function start(done) {
   nodemonInstance = nodemon({
-    script: './modules/modern-mean-core-material/dist/server/app/server.js',
+    //TODO this is hacky because i am in a hurry
+    script: '*/modern-mean-core-material/dist/server/app/server.js',
     watch: ['noop'],
   });
   return done();
@@ -38,7 +39,6 @@ function watchClient(done) {
     let pathArr = filepath.split('/');
     let modulePath = pathArr[0] + '/' + pathArr[1];
     let gulpFile = './' + modulePath + '/gulpfile.babel.js';
-    console.log(gulpFile);
     exec('gulp --gulpfile ' + gulpFile + ' client', function(error, stdout, stderr) {
       console.log(stdout);
       gulp.series(gulp.parallel(build.modules, build.images), build.inject, restart, livereloadChanged)();

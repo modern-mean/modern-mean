@@ -131,11 +131,12 @@ modules.displayName = 'images';
 gulp.task(images);
 
 function inject() {
-  return gulp.src('modules/modern-mean-core-material/dist/server/views/index.server.view.html')
+  //TODO this is hacky cause I am in a hurry
+  return gulp.src(['*/modern-mean-core-material/dist/server/views/index.server.view.html'])
     .pipe(ginject(gulp.src(['public/dist/angular.js', 'public/dist/bootloader.js', 'public/dist/**/*.{js,css}'], {read: false}), {
       ignorePath: '/public'
     }))
-    .pipe(gulp.dest('modules/modern-mean-core-material/dist/server/views/'));
+    .pipe(gulp.dest('.'));
 }
 inject.displayName = 'inject';
 gulp.task(inject);

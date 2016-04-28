@@ -56,12 +56,6 @@ If you want the user module you can install it now
 npm install modern-mean/users-material
 ```
 
-##Link the modules
-Now you need to link the installed modules so the main package knows to build them.
-```sh
-gulp link
-```
-
 ##Modern MEAN Runtime
 ```sh
 gulp

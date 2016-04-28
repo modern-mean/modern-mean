@@ -23,6 +23,8 @@ gulp debug
 ```
 The debug task should be used when debugging your modules.  It is the same as development task but enables silly logging on the server side.
 
+##Other Gulp Tasks
+<a href="gulptasks.md">All Gulp Tasks</a>
 
 ##Next
 <a href="override.md">Overriding installed modules</a>

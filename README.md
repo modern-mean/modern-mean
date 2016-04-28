@@ -1,6 +1,6 @@
 # Modern-MEAN (modern-mean)
 
-[![Join the chat at https://gitter.im/modern-mean/modern-mean-core](https://badges.gitter.im/modern-mean/modern-mean-core.svg)](https://gitter.im/modern-mean/modern-mean-core?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at https://gitter.im/modern-mean](https://badges.gitter.im/modern-mean.svg)](https://gitter.im/modern-mean?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 
 ##Quick Started
@@ -16,8 +16,12 @@ gulp
 
 ## Documentation
 Visit our <a href="https://github.com/modern-mean/modern-mean/tree/master/docs">documentation folder</a> for up to date documentation
-* <a href="https://github.com/modern-mean/modern-mean/blob/master/docs/quickstart.md">Getting Started Guide</a>
-* <a href="https://github.com/modern-mean/modern-mean/blob/master/docs/logging.md">Logging</a>
+* <a href="https://github.com/modern-mean/modern-mean/blob/master/docs/installation.md">Installation</a>
+* <a href="https://github.com/modern-mean/modern-mean/blob/master/docs/configure_modules.md">Configuration</a>
+* <a href="https://github.com/modern-mean/modern-mean/blob/master/docs/gulptasks.md">Runtime</a>
+* <a href="https://github.com/modern-mean/modern-mean/blob/master/docs/overriding_modules.md">Overriding Modules</a>
+* <a href="https://github.com/modern-mean/modern-mean/blob/master/docs/customizing_modules.md">Customizing Modules</a>
+* <a href="https://github.com/modern-mean/modern-mean/blob/master/docs/debug.md">Debugging/Troubleshooting</a>
 
 
 Modern-MEAN is a full-stack JavaScript open-source solution, forked originally from MEAN.js which provides a solid starting point for [MongoDB](http://www.mongodb.org/), [Node.js](http://www.nodejs.org/), [Express](http://expressjs.com/), and [AngularJS](http://angularjs.org/) based applications.

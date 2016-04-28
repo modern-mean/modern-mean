@@ -1,7 +1,7 @@
 #Database seeding
-Most modules will be developed to seed testing information into the database.  To enable seeding set the MONGO_SEED environment variable to true.
+Most modules will be developed to seed testing information into the database.  To enable seeding set the appropriate environment variable to true.  For example, the following command will seed users into the database.
 ```bash
-MONGO_SEED=true gulp
+MEAN_USERS_SEED=true gulp
 ```
 
 ##Users module

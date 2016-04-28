@@ -21,7 +21,7 @@ Before you create a new Issue:
 * Be small and concise.  Multiple PR's are preferred over large PR.
 * Must pass all travis tests.
 * Must not reduce code coverage.
-* Should be in the following format
+* Should be in the following format.
 ```
 Header
 Blank Line

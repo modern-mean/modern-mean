@@ -14,11 +14,11 @@ gulp.task(link);
 
 
 //Gulp Default
-let defaultTask = gulp.series(build.clean, environments.development, gulp.parallel(build.modules, build.images), build.inject, serve.start, serve.watch.all);
+let defaultTask = gulp.series(build.clean, environments.development, build.moduleCheck, build.installModules, build.buildModules, gulp.parallel(build.modules, build.images), build.inject, serve.start, serve.watch.all);
 defaultTask.displayName = 'default';
 gulp.task(defaultTask);
 
 //Gulp Debug
-let debugTask = gulp.series(build.clean, environments.debug, gulp.parallel(build.modules, build.images), build.inject, serve.start, serve.watch.all);
+let debugTask = gulp.series(build.clean, environments.debug, build.moduleCheck, build.installModules, build.buildModules, gulp.parallel(build.modules, build.images), build.inject, serve.start, serve.watch.all);
 debugTask.displayName = 'debug';
 gulp.task(debugTask);

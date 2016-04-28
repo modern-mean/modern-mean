@@ -11,6 +11,66 @@ import ginject from 'gulp-inject';
 import stripDebug from 'gulp-strip-debug';
 import del from 'del';
 import babel from 'gulp-babel';
+import map from 'map-stream';
+import glob from 'glob';
+import path from 'path';
+import fs from 'fs';
+import ignore from 'gulp-ignore';
+import install from 'gulp-install';
+import { exec } from 'child_process';
+import gutil from 'gulp-util';
+
+
+function moduleCheck(done) {
+  let modules = glob.sync('./modules/*');
+  modules.forEach(function (module) {
+    let modulePath = path.parse(module);
+    if (fs.existsSync('./node_modules/' + modulePath.base)) {
+      gutil.log(modulePath.base + ' exists in both ./node_modules and ./modules.  This will cause both modules to build.');
+      done();
+      process.exit(1);
+    }
+  });
+
+  return done();
+}
+moduleCheck.displayName = 'module:check';
+gulp.task(moduleCheck);
+
+function buildFilter(file) {
+  if (process.env.MEAN_BUILD_FORCE === 'true') {
+    return false;
+  }
+
+  let filepath = path.parse(file.path);
+
+  if (filepath.base === 'bower.json') {
+    return fs.existsSync(filepath.dir + '/bower_components');
+  } else if (filepath.base === 'package.json') {
+    return fs.existsSync(filepath.dir + '/node_modules');
+  }
+}
+
+function installModules(done) {
+  return gulp.src(['./modules/*/bower.json', './modules/*/package.json'])
+          .pipe(ignore.exclude(buildFilter))
+          .pipe(install())
+          .pipe(debug());
+}
+installModules.displayName = 'install';
+gulp.task(installModules);
+
+function buildModules() {
+  return gulp.src(['./modules/*/gulpfile.babel.js'])
+          .pipe(map(function (file, cb) {
+            exec('gulp --gulpfile ' + file.path, function(error, stdout, stderr) {
+              console.log(stdout);
+              cb();
+            });
+          }));
+}
+buildModules.displayName = 'build';
+gulp.task(buildModules);
 
 
 function modules() {
@@ -22,7 +82,10 @@ function modules() {
   let vendorCSS = filter(['**/vendor.css'], { restore: true });
   let templates = filter(['**/templates.js'], { restore: true });
 
-  return gulp.src(['./modules/*/dist/client/**/*.{js,css}'])
+  let modules = [];
+
+  return gulp.src(['./modules/*/dist/client/**/*.{js,css}', './node_modules/modern-mean-*/dist/client/**/*.{js,css}'])
+          .pipe(debug())
           .pipe(angular)
           .pipe(rename('angular.js'))
           .pipe(angular.restore)
@@ -90,5 +153,8 @@ export {
   modules,
   images,
   clean,
-  inject
+  inject,
+  installModules,
+  buildModules,
+  moduleCheck
 };

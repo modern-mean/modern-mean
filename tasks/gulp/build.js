@@ -113,7 +113,7 @@ modules.displayName = 'modules';
 gulp.task(modules);
 
 function images() {
-  return gulp.src(['./modules/*/dist/client/img/**/*', './node_modules/*/dist/client/img/**/*'])
+  return gulp.src(['./modules/*/dist/client/img/**/*', './node_modules/modern-mean-*/dist/client/img/**/*'])
           .pipe(rename(function (path) {
             let dir = path.dirname.split('/');
             path.dirname = dir[0];

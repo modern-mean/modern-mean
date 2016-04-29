@@ -2,16 +2,8 @@
 
 [![Join the chat at https://gitter.im/modern-mean](https://badges.gitter.im/modern-mean.svg)](https://gitter.im/modern-mean?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-
-##Quick Started
-This package is only the filesystem and build system.  You need to install a core package
-```sh
-git clone https://github.com/modern-mean/modern-mean.git
-cd modern-mean
-npm install
-npm install modern-mean/core-material
-gulp
-```
+##Live Demo
+Checkout our live demo! <a href="http://modernmean.com:8080/">http://modernmean.com:8080/</a>
 
 ## Documentation
 Visit our <a href="https://github.com/modern-mean/modern-mean/tree/master/docs">documentation folder</a> for up to date documentation

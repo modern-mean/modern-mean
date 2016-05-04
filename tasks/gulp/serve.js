@@ -32,7 +32,7 @@ function restart(done) {
 restart.displayName = 'nodemon:restart';
 
 function watchClient(done) {
-  let watchFiles = ['./modules/*/client/**/*'];
+  let watchFiles = ['./modules/*/client/**/*', '!**/*.constants.js', '!**/*.values.js'];
   livereload.listen();
   let watcher = gulp.watch(watchFiles);
   watcher.on('change', function(filepath, stats) {

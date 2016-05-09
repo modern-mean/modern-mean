@@ -16,8 +16,7 @@
   },
   "scripts": {
     "start": "gulp",
-    "test": "gulp test",
-    "postinstall": "gulp link"
+    "test": "gulp test"
   },
   "dependencies": {
     "babel-core": "~6.7.4",

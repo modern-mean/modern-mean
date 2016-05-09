@@ -1,6 +1,7 @@
 # Modern-MEAN (modern-mean)
 
 [![Join the chat at https://gitter.im/modern-mean](https://badges.gitter.im/modern-mean.svg)](https://gitter.im/modern-mean?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![dependencies](https://david-dm.org/modern-mean/modern-mean.svg)](https://david-dm.org/modern-mean/modern-mean)
 
 ##Live Demo
 Checkout our live demo! <a href="http://modernmean.com:8080/">http://modernmean.com:8080/</a>

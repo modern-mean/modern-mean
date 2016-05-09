@@ -21,7 +21,7 @@ app/tests/coverage/
 # ======================
 public/dist/
 public/img/
-modules/modern-mean-*
+moduledev/*
 
 
 

@@ -47,7 +47,7 @@ clean.displayName = 'clean';
 gulp.task(clean);
 
 //Run task
-let run = gulp.series(serve.clean, serve.modules.install, serve.modules.build, gulp.parallel(serve.modules.application, serve.modules.images), serve.modules.inject, serve.nodemon.start, serve.watch.all);
+let run = gulp.series(serve.clean, serve.modules.link, serve.modules.install, serve.modules.build, gulp.parallel(serve.modules.application, serve.modules.images), serve.modules.inject, serve.nodemon.start, serve.watch.all);
 run.displayName = 'run';
 
 //Gulp Default

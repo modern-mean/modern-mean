@@ -5,7 +5,7 @@ import * as serve from 'modern-mean-serve-gulp/dist';
 
 //Environment variables for all environments
 function all() {
-  process.env.MM_CORE_VIEWS = __dirname + '/node_modules/modern-mean-core-material/dist/server/views';
+  process.env.MM_CORE_SERVER_VIEWS = __dirname + '/node_modules/modern-mean-core-server/dist/server/views';
 }
 
 //Environment variables for debug environment

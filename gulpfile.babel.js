@@ -13,9 +13,9 @@ function debug(done) {
   all();
 
   process.env.NODE_ENV = 'development';
-  process.env.MM_WINSTON_LEVEL = 'debug';
-  process.env.MM_CORE_LIVERELOAD = 'true';
-  process.env.MM_CORE_ANGULAR_DEBUG = 'true';
+  process.env.MM_LOG_LEVEL = 'debug';
+  process.env.MM_CORE_SERVER_LIVERELOAD = 'true';
+  process.env.MM_CORE_CLIENT_ANGULAR_DEBUG = 'true';
 
   return done();
 }
@@ -25,8 +25,8 @@ function development(done) {
   all();
 
   process.env.NODE_ENV = 'development';
-  process.env.MM_WINSTON_LEVEL = 'info';
-  process.env.MM_CORE_LIVERELOAD = 'true';
+  process.env.MM_LOG_LEVEL = 'info';
+  process.env.MM_CORE_SERVER_LIVERELOAD = 'true';
 
   return done();
 }
@@ -35,8 +35,8 @@ function production(done) {
   all();
 
   process.env.NODE_ENV = 'production';
-  process.env.MM_WINSTON_CONSOLE = 'false';
-  process.env.MM_CORE_ANGULAR_INFO = 'false';
+  process.env.MM_LOG_CONSOLE = 'false';
+  process.env.MM_CORE_CLIENT_ANGULAR_INFO = 'false';
 
   return done();
 }

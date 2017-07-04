@@ -1,5 +1,7 @@
 # Modern-MEAN (modern-mean)
 
+[![Join the chat at https://gitter.im/modern-mean645654654/Lobby](https://badges.gitter.im/modern-mean645654654/Lobby.svg)](https://gitter.im/modern-mean645654654/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Join the chat at https://gitter.im/modern-mean](https://badges.gitter.im/modern-mean.svg)](https://gitter.im/modern-mean?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ##Requirements
